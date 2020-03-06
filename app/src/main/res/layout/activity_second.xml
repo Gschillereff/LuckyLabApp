@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondActivity">
+
+    <EditText
+        android:id="@+id/nickles_count"
+        android:layout_width="175dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="110dp"
+        android:ems="10"
+        android:hint="@string/nickles"
+        android:inputType="number"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/dimes_count"
+        app:layout_constraintEnd_toStartOf="@+id/ones_count"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="133dp"
+        android:layout_marginLeft="133dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="190dp"
+        android:layout_marginRight="190dp"
+        android:layout_marginBottom="303dp"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/dimes_count"
+        android:layout_width="175dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="@string/dimes"
+        android:inputType="number"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/quarters_count"
+        app:layout_constraintEnd_toStartOf="@+id/fives_count"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nickles_count"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/quarters_count"
+        android:layout_width="175dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="@string/quarters"
+        android:inputType="number"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/coinView"
+        app:layout_constraintEnd_toStartOf="@+id/tens_count"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dimes_count" />
+
+    <TextView
+        android:id="@+id/coinView"
+        android:layout_width="175dp"
+        android:layout_height="40dp"
+        android:hint="Coin Total"
+        app:layout_constraintBottom_toTopOf="@+id/dollarView"
+        app:layout_constraintEnd_toStartOf="@+id/twentites_count"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quarters_count" />
+
+    <EditText
+        android:id="@+id/ones_count"
+        android:layout_width="205dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:ems="10"
+        android:hint="@string/ones"
+        android:inputType="number"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/fives_count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nickles_count"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/fives_count"
+        android:layout_width="205dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:ems="10"
+        android:hint="@string/fives"
+        android:inputType="number"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/tens_count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dimes_count"
+        app:layout_constraintTop_toBottomOf="@+id/ones_count" />
+
+    <EditText
+        android:id="@+id/tens_count"
+        android:layout_width="205dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:ems="10"
+        android:hint="@string/tens"
+        android:inputType="number"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/twentites_count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/quarters_count"
+        app:layout_constraintTop_toBottomOf="@+id/dimes_count" />
+
+    <EditText
+        android:id="@+id/twentites_count"
+        android:layout_width="205dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:ems="10"
+        android:hint="@string/twenties"
+        android:inputType="number"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/totalView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/coinView"
+        app:layout_constraintTop_toBottomOf="@+id/tens_count" />
+
+    <TextView
+        android:id="@+id/dollarView"
+        android:layout_width="175dp"
+        android:layout_height="40dp"
+        android:hint="Dollar Total"
+        app:layout_constraintBottom_toTopOf="@+id/resultView"
+        app:layout_constraintEnd_toStartOf="@+id/twentites_count"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coinView" />
+
+    <TextView
+        android:id="@+id/totalView"
+        android:layout_width="205dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:hint="@string/grandTotal"
+        app:layout_constraintBottom_toTopOf="@+id/resultView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dollarView"
+        app:layout_constraintTop_toBottomOf="@+id/twentites_count" />
+
+    <TextView
+        android:id="@+id/resultView"
+        android:layout_width="380dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:layout_marginBottom="11dp"
+        android:hint="Result"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dollarView" />
+
+
+</android.support.constraint.ConstraintLayout>
