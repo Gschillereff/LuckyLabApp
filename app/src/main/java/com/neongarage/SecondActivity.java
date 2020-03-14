@@ -12,7 +12,7 @@ import com.neongarage.schil.helloworld.R;
 
 public class SecondActivity extends AppCompatActivity {
 
-    Button mButton;
+    Button submitButton;
     EditText nickelsEdit;
     EditText dimesEdit;
     EditText quarterEdit;
@@ -45,33 +45,33 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        mButton = (Button)findViewById(R.id.button2);
-        mButton.setOnClickListener(new View.OnClickListener() {
+        submitButton = findViewById(R.id.submit_button);
+        submitButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view){
 
              //Get the nickels
-            nickelsEdit = (EditText)findViewById(R.id.nickles_count);
+            nickelsEdit = findViewById(R.id.nickles_count);
 
             //Get the dimes
-            dimesEdit = (EditText)findViewById(R.id.dimes_count);
+            dimesEdit = findViewById(R.id.dimes_count);
 
             //Get the quarters
-            quarterEdit = (EditText)findViewById(R.id.quarters_count);
+            quarterEdit = findViewById(R.id.quarters_count);
 
             //Get the ones
-            onesEdit = (EditText)findViewById(R.id.ones_count);
+            onesEdit = findViewById(R.id.ones_count);
             int numOne = Integer.parseInt(onesEdit.getText().toString());
 
             //Get fives
-            fivesEdit = (EditText) findViewById(R.id.fives_count);
+            fivesEdit =  findViewById(R.id.fives_count);
             int numFive = Integer.parseInt(fivesEdit.getText().toString());
 
             //Get tens
-            tensEdit = (EditText) findViewById(R.id.tens_count);
+            tensEdit =  findViewById(R.id.tens_count);
             int numTen = Integer.parseInt(tensEdit.getText().toString());
 
             //Get twenties
-             twentiesEdit = (EditText)findViewById(R.id.twentites_count);
+             twentiesEdit = findViewById(R.id.twentites_count);
              int numTwnety = Integer.parseInt(twentiesEdit.getText().toString());
 
             //Count the coins, has running total right now, need to multiply by values and get money total
@@ -82,7 +82,7 @@ public class SecondActivity extends AppCompatActivity {
             double dimeTotal = numDime * dimeValue;
             double quarterTotal = numQuart * quarterValue;
             double coinValue = nickleTotal + quarterTotal + dimeTotal;
-            coinTotal = (TextView)findViewById((R.id.coinView));
+            coinTotal = findViewById((R.id.coinView));
             coinTotal.setText("Coin Total: " + coinValue);
 
             //Count value of dollars
@@ -90,16 +90,16 @@ public class SecondActivity extends AppCompatActivity {
             int tenTotal = numTen * tensValue;
             int twentyTotal = numTwnety * twentiesValue;
             int dollarTot = numOne + fiveTotal + tenTotal + twentyTotal;
-            dollarTotal = (TextView)findViewById(R.id.dollarView);
+            dollarTotal = findViewById(R.id.dollarView);
             dollarTotal.setText("Dollar Total: " + dollarTot);
 
             //Grand total
             double grandTot = dollarTot + coinValue;
-            grandTotal = (TextView)findViewById(R.id.totalView);
+            grandTotal = findViewById(R.id.totalView);
             grandTotal.setText("Grand Total: " + grandTot);
 
             //Difference
-            resultText = (TextView)findViewById(R.id.resultView);
+            resultText = findViewById(R.id.resultView);
             if(grandTot > 150.45)
             {
                 double difference = grandTot - 150.45;
