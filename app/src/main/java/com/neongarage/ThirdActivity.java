@@ -18,13 +18,12 @@ public class ThirdActivity extends AppCompatActivity{
     Button AddPerson;
     TextView personView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
         AddPerson = findViewById(R.id.addPerson);
-        //personView = (TextView)findViewById(R.id.addPersonView);
+        //personView = )findViewById(R.id.addPersonView);
         final FrameLayout layout = findViewById(R.id.addPersonView);
 
         AddPerson.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +37,7 @@ public class ThirdActivity extends AppCompatActivity{
             }
         });
 
-        tipEdit = (EditText)findViewById(R.id.tip_edit);
+        tipEdit = findViewById(R.id.tip_edit);
        // tipView = (TextView)findViewById(R.id.tip_view);
 //        tipView.setText(tipEdit.toString());
 
