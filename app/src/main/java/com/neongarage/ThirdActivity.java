@@ -10,6 +10,8 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.neongarage.schil.helloworld.R;
+
 public class ThirdActivity extends AppCompatActivity{
     TextView tipView;
     EditText tipEdit;
@@ -24,7 +26,6 @@ public class ThirdActivity extends AppCompatActivity{
         AddPerson = findViewById(R.id.addPerson);
         //personView = (TextView)findViewById(R.id.addPersonView);
         final FrameLayout layout = findViewById(R.id.addPersonView);
-
 
         AddPerson.setOnClickListener(new View.OnClickListener() {
             @Override
