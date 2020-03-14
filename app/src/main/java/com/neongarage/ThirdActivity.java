@@ -21,10 +21,10 @@ public class ThirdActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_third);
-        AddPerson = findViewById(R.id.addPerson);
+        setContentView(R.layout.tip_count_activity);
+        AddPerson = findViewById(R.id.add_person);
         //personView = )findViewById(R.id.addPersonView);
-        final FrameLayout layout = findViewById(R.id.addPersonView);
+        final FrameLayout layout = findViewById(R.id.add_person_view);
 
         AddPerson.setOnClickListener(new View.OnClickListener() {
             @Override
