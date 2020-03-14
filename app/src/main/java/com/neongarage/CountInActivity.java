@@ -20,24 +20,34 @@ public class CountInActivity extends AppCompatActivity {
     EditText fivesEdit;
     EditText tensEdit;
     EditText twentiesEdit;
-    TextView nickelsText;
-    TextView dimesText;
-    TextView quarterText;
-    TextView onesText;
-    TextView fivesText;
-    TextView tensText;
-    TextView twentiesText;
     TextView resultText;
     TextView dollarTotal;
     TextView coinTotal;
     TextView grandTotal;
-    String numNic = "Number of nickels: ";
-    double nickelValue = .05;
-    double dimeValue = .10;
-    double quarterValue = .25;
-    int fivesValue = 5;
-    int tensValue = 10;
-    int twentiesValue = 20;
+
+    enum CurrencyValue {
+        PENNY(.01), NICKEL(.05), DIME(.1), QUARTER(.25), DOLLAR(1), FIVE(5), TEN(10), TWENTY(20);
+
+        CurrencyValue(double value) {
+            this.value = value;
+        }
+
+        double value;
+        int count;
+
+
+        public double getValue() {
+            return value;
+        }
+
+        public void setCount(int count) {
+            this.count = count;
+        }
+
+        public double getTotal() {
+            return count * getValue();
+        }
+    }
 
 
     @Override
@@ -64,36 +74,47 @@ public class CountInActivity extends AppCompatActivity {
 
         //Get the ones
         onesEdit = findViewById(R.id.ones_count);
-        int numOne = parseInt(onesEdit, 0);
+        CurrencyValue ones = CurrencyValue.DOLLAR;
+        ones.setCount(parseInt(onesEdit, 0));
 
         //Get fives
         fivesEdit = findViewById(R.id.fives_count);
-        int numFive = parseInt(fivesEdit, 0);
+        CurrencyValue fives = CurrencyValue.FIVE;
+        fives.setCount(parseInt(fivesEdit, 0));
 
         //Get tens
         tensEdit = findViewById(R.id.tens_count);
-        int numTen = parseInt(tensEdit, 0);
+        CurrencyValue tens = CurrencyValue.TEN;
+        tens.setCount(parseInt(tensEdit, 0));
 
         //Get twenties
         twentiesEdit = findViewById(R.id.twentites_count);
-        int numTwenty = parseInt(twentiesEdit, 0);
+        CurrencyValue twenties = CurrencyValue.TWENTY;
+        twenties.setCount(parseInt(twentiesEdit, 0));
 
         //Count the coins, has running total right now, need to multiply by values and get money total
-        int numNick = parseInt(nickelsEdit, 0);
-        int numDime = parseInt(dimesEdit, 0);
-        int numQuart = parseInt(quarterEdit, 0);
-        double nickleTotal = numNick * nickelValue;
-        double dimeTotal = numDime * dimeValue;
-        double quarterTotal = numQuart * quarterValue;
+        CurrencyValue nickels = CurrencyValue.NICKEL;
+        nickels.setCount(parseInt(nickelsEdit, 0));
+
+        CurrencyValue dimes = CurrencyValue.DIME;
+        dimes.setCount(parseInt(dimesEdit, 0));
+
+        CurrencyValue quarters = CurrencyValue.QUARTER;
+        quarters.setCount(parseInt(quarterEdit, 0));
+
+        double nickleTotal = nickels.getTotal();
+        double dimeTotal = dimes.getTotal();
+        double quarterTotal = quarters.getTotal();
         double coinValue = nickleTotal + quarterTotal + dimeTotal;
         coinTotal = findViewById((R.id.coin_view));
         coinTotal.setText("Coin Total: " + coinValue);
 
         //Count value of dollars
-        int fiveTotal = numFive * fivesValue;
-        int tenTotal = numTen * tensValue;
-        int twentyTotal = numTwenty * twentiesValue;
-        int dollarTot = numOne + fiveTotal + tenTotal + twentyTotal;
+        double onesTotal = ones.getTotal();
+        double fiveTotal = fives.getTotal();
+        double tenTotal = tens.getTotal();
+        double twentyTotal = twenties.getTotal();
+        double dollarTot = onesTotal + fiveTotal + tenTotal + twentyTotal;
         dollarTotal = findViewById(R.id.dollarView);
         dollarTotal.setText("Dollar Total: " + dollarTot);
 
