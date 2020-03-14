@@ -10,8 +10,6 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.schil.helloworld.R;
-
 public class ThirdActivity extends AppCompatActivity{
     TextView tipView;
     EditText tipEdit;

@@ -7,8 +7,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.schil.helloworld.R;
-
 
 public class SecondActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.schil.helloworld;
+package com.neongarage;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

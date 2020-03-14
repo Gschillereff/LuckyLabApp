@@ -1,4 +1,4 @@
-package com.example.schil.helloworld;
+package com.neongarage;
 
 import org.junit.Test;
 
