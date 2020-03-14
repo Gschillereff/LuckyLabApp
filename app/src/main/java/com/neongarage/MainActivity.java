@@ -33,12 +33,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void goToSecondActivity(){
-        Intent intent = new Intent(this, SecondActivity.class);
+        Intent intent = new Intent(this, CountInActivity.class);
         startActivity(intent);
     }
 
     private void goToThirdActivity(){
-        Intent intent1 = new Intent(this, ThirdActivity.class);
+        Intent intent1 = new Intent(this, TipCountInActivity.class);
         startActivity(intent1);
     }
 }

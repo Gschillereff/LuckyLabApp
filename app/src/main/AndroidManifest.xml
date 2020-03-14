@@ -16,8 +16,8 @@ package="com.neongarage.schil.helloworld">
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
     </activity>
-    <activity android:name="com.neongarage.SecondActivity"></activity>
-    <activity android:name="com.neongarage.ThirdActivity"></activity>
+    <activity android:name="com.neongarage.CountInActivity"></activity>
+    <activity android:name="com.neongarage.TipCountInActivity"></activity>
 </application>
 
 </manifest>
