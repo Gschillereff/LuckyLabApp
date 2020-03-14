@@ -1,0 +1,56 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.neongarge.luckylabcalculator"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="15"
+8-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="28" />
+9-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml
+10
+11    <application
+11-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:5:1-21:15
+12        android:allowBackup="true"
+12-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:6:5-31
+13        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+13-->[com.android.support:support-compat:28.0.0] /Users/aegger/.gradle/caches/transforms-2/files-2.1/b73d0db3c489aeab8b531c92b0313ef9/support-compat-28.0.0/AndroidManifest.xml:22:18-91
+14        android:debuggable="true"
+15        android:icon="@mipmap/ic_launcher"
+15-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:7:5-39
+16        android:label="@string/app_name"
+16-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:8:5-37
+17        android:roundIcon="@mipmap/ic_launcher_round"
+17-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:9:5-50
+18        android:supportsRtl="true"
+18-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:10:5-31
+19        android:testOnly="true"
+20        android:theme="@style/AppTheme" >
+20-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:11:5-36
+21        <activity android:name="Calculator.MainActivity" >
+21-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:12:5-18:16
+21-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:12:15-53
+22            <intent-filter>
+22-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:13:9-17:25
+23                <action android:name="android.intent.action.MAIN" />
+23-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:14:13-65
+23-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:14:21-62
+24                <action android:name="android.intent.action.VIEW" />
+24-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:15:13-65
+24-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:15:21-62
+25
+26                <category android:name="android.intent.category.LAUNCHER" />
+26-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:16:13-73
+26-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:16:23-70
+27            </intent-filter>
+28        </activity>
+29        <activity android:name="Calculator.SecondActivity" />
+29-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:19:5-67
+29-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:19:15-55
+30        <activity android:name="Calculator.ThirdActivity" />
+30-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:20:5-66
+30-->/Users/aegger/ebay_repos/LuckyLabApp/LuckyLabCalculator/src/main/AndroidManifest.xml:20:15-54
+31    </application>
+32
+33</manifest>
