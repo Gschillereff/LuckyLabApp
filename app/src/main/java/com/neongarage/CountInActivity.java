@@ -26,7 +26,7 @@ public class CountInActivity extends AppCompatActivity {
     TextView grandTotal;
 
     enum CurrencyValue {
-        PENNY(.01), NICKEL(.05), DIME(.1), QUARTER(.25), DOLLAR(1), FIVE(5), TEN(10), TWENTY(20);
+        NICKEL(.05), DIME(.1), QUARTER(.25), DOLLAR(1), FIVE(5), TEN(10), TWENTY(20);
 
         CurrencyValue(double value) {
             this.value = value;
