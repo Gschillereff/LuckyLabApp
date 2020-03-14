@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Lucky Lab Calculator</string>
     <string name="second_Page">Hello World</string>
-    <string name="newString">string</string>
+    <string name="submit">Submit</string>
     <string name="nickles">Enter Number of Nickles</string>
     <string name="dimes">Enter Number of Dimes</string>
     <string name="quarters">Enter Number of Quarters</string>

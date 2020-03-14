@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.neongarage.schil.helloworld.R;
 
-public class ThirdActivity extends AppCompatActivity{
+public class TipCountInActivity extends AppCompatActivity{
     TextView tipView;
     EditText tipEdit;
     Button AddPerson;
@@ -29,7 +29,7 @@ public class ThirdActivity extends AppCompatActivity{
         AddPerson.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText myEditText = new EditText(ThirdActivity.this);
+                EditText myEditText = new EditText(TipCountInActivity.this);
                 myEditText.setHint("New Guy");
                 myEditText.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
                 myEditText.setPadding(20,20,20,20);
