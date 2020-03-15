@@ -6,10 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-
-public class CountInActivity extends AppCompatActivity {
+public class CountInActivity extends BaseActivity {
     enum CurrencyValue {
 
         NICKEL(.05), DIME(.1), QUARTER(.25), DOLLAR(1), FIVE(5), TEN(10), TWENTY(20);
