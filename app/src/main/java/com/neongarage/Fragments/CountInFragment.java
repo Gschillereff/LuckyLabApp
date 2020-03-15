@@ -42,9 +42,9 @@ public class CountInFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    Button submitButton;
-    TextInputEditText nickelsEdit;
-    TextInputEditText dimesEdit;
+    private Button submitButton;
+    private TextInputEditText nickelsEdit;
+    private TextInputEditText dimesEdit;
     TextInputEditText quartersEdit;
     TextInputEditText onesEdit;
     TextInputEditText fivesEdit;
@@ -109,27 +109,22 @@ public class CountInFragment extends Fragment implements View.OnClickListener {
         nickels.setCount(parseInt(nickelsEdit, 0));
 
         //Get the dimes
-
         CurrencyValue dimes = CurrencyValue.DIME;
         dimes.setCount(parseInt(dimesEdit, 0));
 
         //Get the quarters
-
         CurrencyValue quarters = CurrencyValue.QUARTER;
         quarters.setCount(parseInt(quartersEdit, 0));
 
         //Get the ones
-
         CurrencyValue ones = CurrencyValue.DOLLAR;
         ones.setCount(parseInt(onesEdit, 0));
 
         //Get fives
-
         CurrencyValue fives = CurrencyValue.FIVE;
         fives.setCount(parseInt(fivesEdit, 0));
 
         //Get tens
-
         CurrencyValue tens = CurrencyValue.TEN;
         tens.setCount(parseInt(tensEdit, 0));
 
