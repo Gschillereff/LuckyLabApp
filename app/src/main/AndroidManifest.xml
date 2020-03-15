@@ -9,7 +9,7 @@
         android:roundIcon="@drawable/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.neongarage.MainActivity">
+        <activity android:name="com.neongarage.Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -17,9 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.neongarage.CountInActivity"></activity>
-        <activity android:name="com.neongarage.TipCountInActivity"></activity>
-        <activity android:name="com.neongarage.BaseActivity"></activity>
+        <activity android:name="com.neongarage.Activities.CountInActivity"></activity>
+        <activity android:name="com.neongarage.Activities.TipCountInActivity"></activity>
+        <activity android:name="com.neongarage.Activities.BaseActivity"></activity>
     </application>
 
 </manifest>
