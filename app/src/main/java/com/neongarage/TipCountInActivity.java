@@ -1,6 +1,5 @@
 package com.neongarage;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,9 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class TipCountInActivity extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class TipCountInActivity extends AppCompatActivity {
     TextView tipView;
     EditText tipEdit;
     Button AddPerson;
