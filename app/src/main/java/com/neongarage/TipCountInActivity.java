@@ -9,9 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class TipCountInActivity extends AppCompatActivity {
+public class TipCountInActivity extends BaseActivity {
     TextView tipView;
     EditText tipEdit;
     Button AddPerson;
