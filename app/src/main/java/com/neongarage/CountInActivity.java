@@ -111,16 +111,16 @@ public class CountInActivity extends Activity {
         double tenTotal = tens.getTotal();
         double twentyTotal = twenties.getTotal();
         double dollarTot = onesTotal + fiveTotal + tenTotal + twentyTotal;
-        dollarTotal = findViewById(R.id.dollarView);
+        dollarTotal = findViewById(R.id.dollar_view);
         dollarTotal.setText("Dollar Total: " + dollarTot);
 
         //Grand total
         double grandTot = dollarTot + coinValue;
-        grandTotal = findViewById(R.id.totalView);
+        grandTotal = findViewById(R.id.total_view);
         grandTotal.setText("Grand Total: " + grandTot);
 
         //Difference
-        resultText = findViewById(R.id.resultView);
+        resultText = findViewById(R.id.result_view);
         if (grandTot > 150.45) {
             double difference = grandTot - 150.45;
             resultText.setText("You are over\nDrop: " + Math.ceil(difference));
