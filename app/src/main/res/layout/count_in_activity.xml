@@ -7,12 +7,11 @@
     android:padding="16dp"
     tools:context="com.neongarage.CountInActivity">
 
-
     <Button
         android:id="@+id/submit_button"
         android:layout_width="0dp"
-        android:onClick="handleSubmitClick"
         android:layout_height="wrap_content"
+        android:onClick="handleSubmitClick"
         android:text="@string/submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,52 +24,78 @@
         android:layout_height="wrap_content"
         android:hint="Coin Total"
         app:layout_constraintBottom_toTopOf="@+id/dollar_view"
-        app:layout_constraintEnd_toStartOf="@+id/twentites_count"
+        app:layout_constraintEnd_toStartOf="@+id/twenties_count"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quarters_count" />
 
-    <EditText
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/fives_count"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:hint="@string/fives"
-        android:inputType="number"
-        android:textSize="16sp"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
         app:layout_constraintBaseline_toBaselineOf="@id/dimes_count"
         app:layout_constraintBottom_toTopOf="@+id/tens_count"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/dimes_count"
-        app:layout_constraintTop_toBottomOf="@+id/ones_count" />
+        app:layout_constraintTop_toBottomOf="@+id/ones_count"
+        app:startIconContentDescription="Fives">
 
-    <EditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fives_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ones_count"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:hint="@string/ones"
-        android:inputType="number"
-        android:textSize="16sp"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
         app:layout_constraintBaseline_toBaselineOf="@id/nickles_count"
         app:layout_constraintBottom_toTopOf="@+id/fives_count"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/nickles_count"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconContentDescription="Ones">
 
-    <EditText
-        android:id="@+id/twentites_count"
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ones_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/twenties_count"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:hint="@string/twenties"
-        android:inputType="number"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/total_view"
-
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
         app:layout_constraintBaseline_toBaselineOf="@id/coin_view"
+        app:layout_constraintBottom_toTopOf="@+id/total_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/coin_view"
-        app:layout_constraintTop_toBottomOf="@+id/tens_count" />
+        app:layout_constraintTop_toBottomOf="@+id/tens_count"
+        app:startIconContentDescription="Twenties">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/twenties_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/dollar_view"
@@ -78,63 +103,100 @@
         android:layout_height="wrap_content"
         android:hint="Dollar Total"
         app:layout_constraintBottom_toTopOf="@+id/result_view"
-        app:layout_constraintEnd_toStartOf="@+id/twentites_count"
+        app:layout_constraintEnd_toStartOf="@+id/twenties_count"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/coin_view" />
 
-    <EditText
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/quarters_count"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:hint="@string/quarters"
-        android:inputType="number"
-        android:textSize="16sp"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
         app:layout_constraintBottom_toTopOf="@+id/coin_view"
         app:layout_constraintEnd_toStartOf="@+id/tens_count"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dimes_count" />
+        app:layout_constraintTop_toBottomOf="@+id/dimes_count"
+        app:startIconContentDescription="Quarters">
 
-    <EditText
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/quarters_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/dimes_count"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:hint="@string/dimes"
-        android:inputType="number"
-        android:textSize="16sp"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
         app:layout_constraintBottom_toTopOf="@+id/quarters_count"
         app:layout_constraintEnd_toStartOf="@+id/fives_count"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nickles_count" />
+        app:layout_constraintTop_toBottomOf="@+id/nickles_count"
+        app:startIconContentDescription="Dimes">
 
-    <EditText
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dimes_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nickles_count"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:hint="@string/nickles"
-        android:inputType="number"
-        android:textSize="16sp"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
         app:layout_constraintBottom_toTopOf="@+id/dimes_count"
         app:layout_constraintEnd_toStartOf="@+id/ones_count"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconContentDescription="Dimes">
 
-    <EditText
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nickles_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tens_count"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:hint="@string/tens"
-        android:inputType="number"
-        android:textSize="16sp"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
         app:layout_constraintBaseline_toBaselineOf="@id/quarters_count"
-        app:layout_constraintBottom_toTopOf="@+id/twentites_count"
+        app:layout_constraintBottom_toTopOf="@+id/twenties_count"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/quarters_count"
-        app:layout_constraintTop_toBottomOf="@+id/fives_count" />
+        app:layout_constraintTop_toBottomOf="@+id/fives_count"
+        app:startIconContentDescription="Tens">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tens_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/result_view"
@@ -151,12 +213,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/grandTotal"
+        app:layout_constraintBaseline_toBaselineOf="@id/dollar_view"
         app:layout_constraintBottom_toTopOf="@+id/result_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/dollar_view"
 
-        app:layout_constraintBaseline_toBaselineOf="@id/dollar_view"
-        app:layout_constraintTop_toBottomOf="@+id/twentites_count" />
+        app:layout_constraintStart_toEndOf="@+id/dollar_view"
+        app:layout_constraintTop_toBottomOf="@+id/twenties_count" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
