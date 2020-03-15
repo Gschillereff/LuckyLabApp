@@ -3,12 +3,14 @@ package com.neongarage.Activities;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.neongarage.R;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 public class CountInActivity extends BaseActivity {
+
     enum CurrencyValue {
 
         NICKEL(.05), DIME(.1), QUARTER(.25), DOLLAR(1), FIVE(5), TEN(10), TWENTY(20);
@@ -34,13 +36,13 @@ public class CountInActivity extends BaseActivity {
     }
 
     Button submitButton;
-    EditText nickelsEdit;
-    EditText dimesEdit;
-    EditText quarterEdit;
-    EditText onesEdit;
-    EditText fivesEdit;
-    EditText tensEdit;
-    EditText twentiesEdit;
+    TextInputEditText nickelsEdit;
+    TextInputEditText dimesEdit;
+    TextInputEditText quartersEdit;
+    TextInputEditText onesEdit;
+    TextInputEditText fivesEdit;
+    TextInputEditText tensEdit;
+    TextInputEditText twentiesEdit;
     TextView resultText;
     TextView dollarTotal;
     TextView coinTotal;
@@ -60,43 +62,39 @@ public class CountInActivity extends BaseActivity {
     public void handleSubmitClick(View v) {
 
         //Get the nickels
-        nickelsEdit = findViewById(R.id.nickles_count);
+        nickelsEdit = findViewById(R.id.nickles_edit);
+        CurrencyValue nickels = CurrencyValue.NICKEL;
+        nickels.setCount(parseInt(nickelsEdit, 0));
 
         //Get the dimes
-        dimesEdit = findViewById(R.id.dimes_count);
+        dimesEdit = findViewById(R.id.dimes_edit);
+        CurrencyValue dimes = CurrencyValue.DIME;
+        dimes.setCount(parseInt(dimesEdit, 0));
 
         //Get the quarters
-        quarterEdit = findViewById(R.id.quarters_count);
+        quartersEdit = findViewById(R.id.quarters_edit);
+        CurrencyValue quarters = CurrencyValue.QUARTER;
+        quarters.setCount(parseInt(quartersEdit, 0));
 
         //Get the ones
-        onesEdit = findViewById(R.id.ones_count);
+        onesEdit = findViewById(R.id.ones_edit);
         CurrencyValue ones = CurrencyValue.DOLLAR;
         ones.setCount(parseInt(onesEdit, 0));
 
         //Get fives
-        fivesEdit = findViewById(R.id.fives_count);
+        fivesEdit = findViewById(R.id.fives_edit);
         CurrencyValue fives = CurrencyValue.FIVE;
         fives.setCount(parseInt(fivesEdit, 0));
 
         //Get tens
-        tensEdit = findViewById(R.id.tens_count);
+        tensEdit = findViewById(R.id.tens_edit);
         CurrencyValue tens = CurrencyValue.TEN;
         tens.setCount(parseInt(tensEdit, 0));
 
         //Get twenties
-        twentiesEdit = findViewById(R.id.twentites_count);
+        twentiesEdit = findViewById(R.id.twenties_edit);
         CurrencyValue twenties = CurrencyValue.TWENTY;
         twenties.setCount(parseInt(twentiesEdit, 0));
-
-        //Count the coins, has running total right now, need to multiply by values and get money total
-        CurrencyValue nickels = CurrencyValue.NICKEL;
-        nickels.setCount(parseInt(nickelsEdit, 0));
-
-        CurrencyValue dimes = CurrencyValue.DIME;
-        dimes.setCount(parseInt(dimesEdit, 0));
-
-        CurrencyValue quarters = CurrencyValue.QUARTER;
-        quarters.setCount(parseInt(quarterEdit, 0));
 
         double nickleTotal = nickels.getTotal();
         double dimeTotal = dimes.getTotal();
@@ -131,7 +129,8 @@ public class CountInActivity extends BaseActivity {
             resultText.setText("You are right on the Money. Good Job");
     }
 
-    public static int parseInt(EditText editText, int defaultValue) {
+
+    public static int parseInt(TextInputEditText editText, int defaultValue) {
         int intReturn;
         String value = editText.getText().toString();
         try {
