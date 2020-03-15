@@ -36,8 +36,8 @@ public class TipCountInActivity extends Activity {
         });
 
         tipEdit = findViewById(R.id.tip_edit);
-        // tipView = (TextView)findViewById(R.id.tip_view);
-//        tipView.setText(tipEdit.toString());
+        //tipView = (TextView)findViewById(R.id.tip_view);
+        //tipView.setText(tipEdit.toString());
 
     }
 }

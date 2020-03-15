@@ -141,7 +141,6 @@ public class CountInActivity extends Activity {
         }
         return intReturn;
     }
-
 }
 
 

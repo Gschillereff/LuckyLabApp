@@ -13,17 +13,16 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        Button button = findViewById(R.id.count_in_button);
-        Button button1 = findViewById(R.id.tip_out_button);
+        Button countInButton = findViewById(R.id.count_in_button);
+        Button tipOutButton = findViewById(R.id.tip_out_button);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        countInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goToSecondActivity();
             }
         });
-
-        button1.setOnClickListener(new View.OnClickListener() {
+        tipOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v1) {
                 goToThirdActivity();
