@@ -11,7 +11,7 @@ public class TipCountInActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tip_count_host);
+        setContentView(R.layout.activity_host);
 
         if (savedInstanceState == null) {
             TipCountFragment fragment = new TipCountFragment();
