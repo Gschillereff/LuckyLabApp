@@ -1,10 +1,12 @@
-package com.neongarage;
+package com.neongarage.Activities;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.neongarage.R;
 
 public class CountInActivity extends BaseActivity {
     enum CurrencyValue {
@@ -47,7 +49,7 @@ public class CountInActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.count_in_activity);
+        setContentView(R.layout.tip_count_host);
 
         submitButton = findViewById(R.id.submit_button);
     }
