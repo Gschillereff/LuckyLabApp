@@ -6,12 +6,11 @@
     android:layout_height="match_parent"
     tools:context="com.neongarage.MainActivity">
 
-
     <ImageView
         android:id="@+id/logo_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/lucky_lab_logo_foreground"
+        android:src="@drawable/lucky_lab_logo_foreground"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

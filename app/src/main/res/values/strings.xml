@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Lucky Lab Calculator</string>
     <string name="second_Page">Hello World</string>
+    <string name="settings">Settings</string>
+    <string name="count_in">Count In</string>
+    <string name="tip_out">Tip Out</string>
     <string name="submit">Submit</string>
     <string name="nickles">Enter Number of Nickles</string>
     <string name="dimes">Enter Number of Dimes</string>

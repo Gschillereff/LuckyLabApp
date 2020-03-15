@@ -5,15 +5,14 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
         Button countInButton = findViewById(R.id.count_in_button);
         Button tipOutButton = findViewById(R.id.tip_out_button);
 
