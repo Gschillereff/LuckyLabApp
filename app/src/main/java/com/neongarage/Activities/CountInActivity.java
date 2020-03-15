@@ -9,6 +9,8 @@ import com.neongarage.R;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.text.DecimalFormat;
+
 public class CountInActivity extends BaseActivity {
 
     enum CurrencyValue {
@@ -47,6 +49,7 @@ public class CountInActivity extends BaseActivity {
     TextView dollarTotal;
     TextView coinTotal;
     TextView grandTotal;
+    DecimalFormat df = new DecimalFormat("#.00");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,30 +104,30 @@ public class CountInActivity extends BaseActivity {
         double quarterTotal = quarters.getTotal();
         double coinValue = nickleTotal + quarterTotal + dimeTotal;
         coinTotal = findViewById((R.id.coin_view));
-        coinTotal.setText("Coin Total: " + coinValue);
+        coinTotal.setText("Nickels: " + df.format(nickleTotal) + "\nDimes: " + df.format(dimeTotal) +"\nQuarters: " + df.format(quarterTotal));
 
         //Count value of dollars
-        double onesTotal = ones.getTotal();
+        double oneTotal = ones.getTotal();
         double fiveTotal = fives.getTotal();
         double tenTotal = tens.getTotal();
         double twentyTotal = twenties.getTotal();
-        double dollarTot = onesTotal + fiveTotal + tenTotal + twentyTotal;
+        double dollarTot = oneTotal + fiveTotal + tenTotal + twentyTotal;
         dollarTotal = findViewById(R.id.dollar_view);
-        dollarTotal.setText("Dollar Total: " + dollarTot);
+        dollarTotal.setText("Ones: " + df.format(oneTotal) +"\nFives: " + df.format(fiveTotal) + "\nTens: " + df.format(tenTotal) + "\nTwenties: " + df.format(twentyTotal));
 
         //Grand total
         double grandTot = dollarTot + coinValue;
         grandTotal = findViewById(R.id.total_view);
-        grandTotal.setText("Grand Total: " + grandTot);
+        grandTotal.setText("Grand Total: " + df.format(grandTot));
 
         //Difference
         resultText = findViewById(R.id.result_view);
         if (grandTot > 150.45) {
             double difference = grandTot - 150.45;
-            resultText.setText("You are over\nDrop: " + Math.ceil(difference));
-        } else if (grandTot < 149.45) {
+            resultText.setText("You are over\nDrop: " + df.format(Math.ceil(difference)));
+        } else if (grandTot < 149.95) {
             double difference = 149.95 - grandTot;
-            resultText.setText("You are under. \nAsk Gatekeeper for " + Math.ceil(difference));
+            resultText.setText("You are under. \nAsk Gatekeeper for " + df.format(Math.ceil(difference)));
         } else
             resultText.setText("You are right on the Money. Good Job");
     }
