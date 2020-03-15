@@ -1,31 +1,16 @@
 package com.neongarage;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.neongarage.schil.helloworld.R;
 
-
-public class CountInActivity extends AppCompatActivity {
-
-    Button submitButton;
-    EditText nickelsEdit;
-    EditText dimesEdit;
-    EditText quarterEdit;
-    EditText onesEdit;
-    EditText fivesEdit;
-    EditText tensEdit;
-    EditText twentiesEdit;
-    TextView resultText;
-    TextView dollarTotal;
-    TextView coinTotal;
-    TextView grandTotal;
-
+public class CountInActivity extends Activity {
     enum CurrencyValue {
+
         NICKEL(.05), DIME(.1), QUARTER(.25), DOLLAR(1), FIVE(5), TEN(10), TWENTY(20);
 
         CurrencyValue(double value) {
@@ -34,7 +19,6 @@ public class CountInActivity extends AppCompatActivity {
 
         double value;
         int count;
-
 
         public double getValue() {
             return value;
@@ -49,6 +33,18 @@ public class CountInActivity extends AppCompatActivity {
         }
     }
 
+    Button submitButton;
+    EditText nickelsEdit;
+    EditText dimesEdit;
+    EditText quarterEdit;
+    EditText onesEdit;
+    EditText fivesEdit;
+    EditText tensEdit;
+    EditText twentiesEdit;
+    TextView resultText;
+    TextView dollarTotal;
+    TextView coinTotal;
+    TextView grandTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

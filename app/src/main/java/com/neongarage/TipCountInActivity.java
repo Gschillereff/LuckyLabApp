@@ -1,6 +1,6 @@
 package com.neongarage;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +10,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.neongarage.schil.helloworld.R;
-
-public class TipCountInActivity extends AppCompatActivity{
+public class TipCountInActivity extends Activity {
     TextView tipView;
     EditText tipEdit;
     Button AddPerson;
@@ -32,13 +30,14 @@ public class TipCountInActivity extends AppCompatActivity{
                 EditText myEditText = new EditText(TipCountInActivity.this);
                 myEditText.setHint("New Guy");
                 myEditText.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-                myEditText.setPadding(20,20,20,20);
-               layout.addView(myEditText);
+                myEditText.setPadding(20, 20, 20, 20);
+                layout.addView(myEditText);
             }
         });
 
         tipEdit = findViewById(R.id.tip_edit);
-       // tipView = (TextView)findViewById(R.id.tip_view);
+        // tipView = (TextView)findViewById(R.id.tip_view);
 //        tipView.setText(tipEdit.toString());
 
-    }}
+    }
+}
