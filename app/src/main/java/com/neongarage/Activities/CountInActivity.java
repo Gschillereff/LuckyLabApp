@@ -51,7 +51,7 @@ public class CountInActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tip_count_host);
+        setContentView(R.layout.count_in_activity);
 
         submitButton = findViewById(R.id.submit_button);
     }
