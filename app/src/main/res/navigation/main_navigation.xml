@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_navigation">
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_navigation"
+    app:startDestination="@id/mainFragment">
 
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.neongarage.Fragments.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/navigate_to_count_in"
+            app:destination="@id/countInFragment" />
+        <action
+            android:id="@+id/navigate_to_tip_count"
+            app:destination="@id/tipCountFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/countInFragment"
+        android:name="com.neongarage.Fragments.CountInFragment"
+        android:label="CountInFragment" />
+
+    <fragment
+        android:id="@+id/tipCountFragment"
+        android:name="com.neongarage.Fragments.TipCountFragment"
+        android:label="TipCountFragment" />
 </navigation>

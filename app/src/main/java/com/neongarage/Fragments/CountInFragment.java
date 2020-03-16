@@ -72,8 +72,6 @@ public class CountInFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(@NonNull View view,
                               @Nullable Bundle savedInstanceState) {
-
-
         submitButton = view.findViewById(R.id.submit_button);
         submitButton.setOnClickListener(this);
         nickelsEdit = view.findViewById(R.id.nickles_edit);
