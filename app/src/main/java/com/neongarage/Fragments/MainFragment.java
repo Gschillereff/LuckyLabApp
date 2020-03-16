@@ -17,7 +17,6 @@ public class MainFragment extends Fragment {
     Button countInButton;
     Button tipOutButton;
 
-
     // View initialization logic
     @Nullable
     @Override
@@ -34,7 +33,6 @@ public class MainFragment extends Fragment {
         countInButton.setOnClickListener(countInClickCallback);
         tipOutButton = view.findViewById(R.id.tip_out_button);
         tipOutButton.setOnClickListener(tipOutCallback);
-
     }
 
     // The callback makes the call to the activity to make the transition to the count in fragment
