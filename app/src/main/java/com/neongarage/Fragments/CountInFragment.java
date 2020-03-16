@@ -1,11 +1,13 @@
 package com.neongarage.Fragments;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
 import com.google.android.material.textfield.TextInputEditText;
 import com.neongarage.R;
 
@@ -55,6 +57,10 @@ public class CountInFragment extends Fragment implements View.OnClickListener {
     TextView coinTotal;
     TextView grandTotal;
     DecimalFormat df = new DecimalFormat("#.00");
+    StringBuilder coins = new StringBuilder();
+    StringBuilder dollar = new StringBuilder();
+    StringBuilder grand = new StringBuilder();
+    StringBuilder result = new StringBuilder();
 
 
     // View initialization logic
@@ -136,7 +142,14 @@ public class CountInFragment extends Fragment implements View.OnClickListener {
         double dimeTotal = dimes.getTotal();
         double quarterTotal = quarters.getTotal();
         double coinValue = nickleTotal + quarterTotal + dimeTotal;
-        coinTotal.setText("Nickels: " + df.format(nickleTotal) + "\nDimes: " + df.format(dimeTotal) + "\nQuarters: " + df.format(quarterTotal));
+        coins.append("Nickels: ");
+        coins.append(df.format(nickleTotal));
+        coins.append("\nDimes: ");
+        coins.append(df.format(dimeTotal));
+        coins.append("\nQuarters: ");
+        coins.append(df.format(quarterTotal));
+        coinTotal.setText(coins);
+        coins.setLength(0);
 
         //Count value of dollars
         double oneTotal = ones.getTotal();
@@ -144,21 +157,47 @@ public class CountInFragment extends Fragment implements View.OnClickListener {
         double tenTotal = tens.getTotal();
         double twentyTotal = twenties.getTotal();
         double dollarTot = oneTotal + fiveTotal + tenTotal + twentyTotal;
-        dollarTotal.setText("Ones: " + df.format(oneTotal) + "\nFives: " + df.format(fiveTotal) + "\nTens: " + df.format(tenTotal) + "\nTwenties: " + df.format(twentyTotal));
+        dollar.append("Ones: ");
+        dollar.append(df.format(oneTotal));
+        dollar.append("\nFives: ");
+        dollar.append(df.format(fiveTotal));
+        dollar.append("\nTens: ");
+        dollar.append(df.format(tenTotal));
+        dollar.append("\nTwenties: ");
+        dollar.append(df.format(twentyTotal));
+        dollarTotal.setText(dollar);
+        dollar.setLength(0);
 
         //Grand total
         double grandTot = dollarTot + coinValue;
-        grandTotal.setText("Grand Total: " + df.format(grandTot));
+        grand.append("Grand Total: ");
+        grand.append(df.format(grandTot));
+        grandTotal.setText(grand);
+        grand.setLength(0);
 
         //Difference
         if (grandTot > 150.45) {
             double difference = grandTot - 150.45;
-            resultText.setText("You are over\nDrop: " + df.format(Math.ceil(difference)));
+            //Shay says this is green....
+            resultText.setTextColor(Color.rgb(0, 128, 0));
+            result.append("You are over ");
+            result.append(df.format(Math.ceil(difference)));
+            resultText.setText(result);
+            result.setLength(0);
         } else if (grandTot < 149.95) {
             double difference = 149.95 - grandTot;
-            resultText.setText("You are under. \nAsk Gatekeeper for " + df.format(Math.ceil(difference)));
-        } else
-            resultText.setText("You are right on the Money. Good Job");
+            //Apparently this is red
+            resultText.setTextColor(Color.rgb(128, 0, 0));
+            result.append("You are under ");
+            result.append(df.format(Math.ceil(difference)));
+            resultText.setText(result);
+            result.setLength(0);
+        } else {
+            resultText.setTextColor(Color.rgb(0, 0, 128));
+            result.append("Perfect amount, good job!");
+            resultText.setText(result);
+            result.setLength(0);
+        }
     }
 
     public static int parseInt(TextInputEditText editText, int defaultValue) {
