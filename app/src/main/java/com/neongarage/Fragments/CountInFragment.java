@@ -14,6 +14,7 @@ import com.neongarage.R;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import java.text.DecimalFormat;
@@ -142,12 +143,7 @@ public class CountInFragment extends Fragment implements View.OnClickListener {
         double dimeTotal = dimes.getTotal();
         double quarterTotal = quarters.getTotal();
         double coinValue = nickleTotal + quarterTotal + dimeTotal;
-        coins.append("Nickels: ");
-        coins.append(df.format(nickleTotal));
-        coins.append("\nDimes: ");
-        coins.append(df.format(dimeTotal));
-        coins.append("\nQuarters: ");
-        coins.append(df.format(quarterTotal));
+        coins.append("Nickels: ").append(df.format(nickleTotal)).append("\nDimes: ").append(df.format(dimeTotal)).append("\nQuarters: ").append(df.format(quarterTotal));
         coinTotal.setText(coins);
         coins.setLength(0);
 
@@ -157,21 +153,14 @@ public class CountInFragment extends Fragment implements View.OnClickListener {
         double tenTotal = tens.getTotal();
         double twentyTotal = twenties.getTotal();
         double dollarTot = oneTotal + fiveTotal + tenTotal + twentyTotal;
-        dollar.append("Ones: ");
-        dollar.append(df.format(oneTotal));
-        dollar.append("\nFives: ");
-        dollar.append(df.format(fiveTotal));
-        dollar.append("\nTens: ");
-        dollar.append(df.format(tenTotal));
-        dollar.append("\nTwenties: ");
-        dollar.append(df.format(twentyTotal));
+        dollar.append("Ones: ").append(df.format(oneTotal));
+        dollar.append("\nFives: ").append(df.format(fiveTotal)).append("\nTens: ").append(df.format(tenTotal)).append("\nTwenties: ").append(df.format(twentyTotal));
         dollarTotal.setText(dollar);
         dollar.setLength(0);
 
         //Grand total
         double grandTot = dollarTot + coinValue;
-        grand.append("Grand Total: ");
-        grand.append(df.format(grandTot));
+        grand.append("Grand Total: ").append(df.format(grandTot));
         grandTotal.setText(grand);
         grand.setLength(0);
 
@@ -179,21 +168,19 @@ public class CountInFragment extends Fragment implements View.OnClickListener {
         if (grandTot > 150.45) {
             double difference = grandTot - 150.45;
             //Shay says this is green....
-            resultText.setTextColor(Color.rgb(0, 128, 0));
-            result.append("You are over ");
-            result.append(df.format(Math.ceil(difference)));
+            resultText.setTextColor(getResources().getColor(R.color.overColor));
+            result.append("You are over ").append(df.format(Math.ceil(difference)));
             resultText.setText(result);
             result.setLength(0);
         } else if (grandTot < 149.95) {
             double difference = 149.95 - grandTot;
             //Apparently this is red
-            resultText.setTextColor(Color.rgb(128, 0, 0));
-            result.append("You are under ");
-            result.append(df.format(Math.ceil(difference)));
+            resultText.setTextColor(getResources().getColor(R.color.underColor));
+            result.append("You are under ").append(df.format(Math.ceil(difference)));
             resultText.setText(result);
             result.setLength(0);
         } else {
-            resultText.setTextColor(Color.rgb(0, 0, 128));
+            resultText.setTextColor(getResources().getColor(R.color.perfectColor));
             result.append("Perfect amount, good job!");
             resultText.setText(result);
             result.setLength(0);
