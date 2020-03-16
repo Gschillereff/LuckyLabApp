@@ -1,14 +1,14 @@
 package com.neongarage;
 
-import androidx.test.platform.app.InstrumentationRegistry;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
-import android.widget.EditText;
-
-import com.neongarage.Activities.CountInActivity;
+import com.google.android.material.textfield.TextInputEditText;
+import com.neongarage.Fragments.CountInFragment;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import androidx.test.InstrumentationRegistry;
+import androidx.test.runner.AndroidJUnit4;
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -19,17 +19,17 @@ import org.junit.runner.RunWith;
 public class CountInInstrumentionTest {
     @Test
     public void parseIntTest() {
-        EditText editText = new EditText(InstrumentationRegistry.getTargetContext());
+        TextInputEditText editText = new TextInputEditText(InstrumentationRegistry.getTargetContext());
         editText.setText("5");
-        int actualValue = CountInActivity.parseInt(editText, 0);
+        int actualValue = CountInFragment.parseInt(editText, 0);
         Assert.assertEquals(5, actualValue);
     }
 
     @Test
     public void parseInvalidTest() {
-        EditText editText = new EditText(InstrumentationRegistry.getTargetContext());
+        TextInputEditText editText = new TextInputEditText(InstrumentationRegistry.getTargetContext());
         editText.setText("Aaron Sux");
-        int actualValue = CountInActivity.parseInt(editText, 9);
+        int actualValue = CountInFragment.parseInt(editText, 9);
 
         Assert.assertEquals("We passed in Invalid int, expecting default value",9, actualValue);
     }

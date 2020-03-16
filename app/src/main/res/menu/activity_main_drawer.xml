@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/Home"
+            android:title="@string/home"/>
+        <item android:id="@+id/Tip"
+            android:title="@string/tip_out"/>
+        <item android:id="@+id/CountIn"
+            android:title="@string/count_in"/>
+    </group>
+</menu>

@@ -17,9 +17,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.neongarage.Activities.CountInActivity"></activity>
-        <activity android:name="com.neongarage.Activities.TipCountInActivity"></activity>
-        <activity android:name="com.neongarage.Activities.BaseActivity"></activity>
     </application>
 
 </manifest>
