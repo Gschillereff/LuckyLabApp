@@ -7,6 +7,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="overColor">@color/overColor</item>
+        <item name="underColor">@color/underColor</item>
+        <item name="perfectColor">@color/perfectColor</item>
     </style>
 
 </resources>
