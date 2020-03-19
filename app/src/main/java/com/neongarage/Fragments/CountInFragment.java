@@ -69,7 +69,6 @@ public class CountInFragment extends Fragment implements View.OnClickListener {
     Context context;
 
 
-
     // View initialization logic
     @Nullable
     @Override
@@ -85,7 +84,6 @@ public class CountInFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(@NonNull View view,
                               @Nullable Bundle savedInstanceState) {
-
         context = getContext();
         submitButton = view.findViewById(R.id.submit_button);
         submitButton.setOnClickListener(this);
@@ -193,11 +191,9 @@ public class CountInFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    public static ColorStateList resolveThemeColorStateList(Context context, int attributeName)
-    {
+    public static ColorStateList resolveThemeColorStateList(Context context, int attributeName) {
         TypedValue tv = new TypedValue();
-        if(context != null && (context.getTheme().resolveAttribute(attributeName, tv, true) && tv.resourceId != 0))
-        {
+        if (context != null && (context.getTheme().resolveAttribute(attributeName, tv, true) && tv.resourceId != 0)) {
             return ContextCompat.getColorStateList(context, tv.resourceId);
         }
         return null;
@@ -209,7 +205,8 @@ public class CountInFragment extends Fragment implements View.OnClickListener {
         String value = editText.getText().toString();
         try {
             intReturn = Integer.parseInt(value);
-        } catch (NumberFormatException ex) {
+        } catch (NumberFormatException ex)
+        {
             intReturn = defaultValue;
         }
         return intReturn;
