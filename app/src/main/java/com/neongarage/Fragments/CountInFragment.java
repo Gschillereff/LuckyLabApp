@@ -1,7 +1,11 @@
 package com.neongarage.Fragments;
 
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,6 +66,8 @@ public class CountInFragment extends Fragment implements View.OnClickListener {
     StringBuilder dollar = new StringBuilder();
     StringBuilder grand = new StringBuilder();
     StringBuilder result = new StringBuilder();
+    Context context;
+
 
 
     // View initialization logic
@@ -80,7 +86,7 @@ public class CountInFragment extends Fragment implements View.OnClickListener {
     public void onViewCreated(@NonNull View view,
                               @Nullable Bundle savedInstanceState) {
 
-
+        context = getContext();
         submitButton = view.findViewById(R.id.submit_button);
         submitButton.setOnClickListener(this);
         nickelsEdit = view.findViewById(R.id.nickles_edit);
@@ -168,24 +174,35 @@ public class CountInFragment extends Fragment implements View.OnClickListener {
         if (grandTot > 150.45) {
             double difference = grandTot - 150.45;
             //Shay says this is green....
-            resultText.setTextColor(getResources().getColor(R.color.overColor));
+            resultText.setTextColor(resolveThemeColorStateList(context, R.attr.overColor));
             result.append("You are over ").append(df.format(Math.ceil(difference)));
             resultText.setText(result);
             result.setLength(0);
-        } else if (grandTot < 149.95) {
-            double difference = 149.95 - grandTot;
+        } else if (grandTot < 149.50) {
+            double difference = 149.50 - grandTot;
             //Apparently this is red
-            resultText.setTextColor(getResources().getColor(R.color.underColor));
+            resultText.setTextColor(resolveThemeColorStateList(context, R.attr.underColor));
             result.append("You are under ").append(df.format(Math.ceil(difference)));
             resultText.setText(result);
             result.setLength(0);
         } else {
-            resultText.setTextColor(getResources().getColor(R.color.perfectColor));
+            resultText.setTextColor(resolveThemeColorStateList(context, R.attr.perfectColor));
             result.append("Perfect amount, good job!");
             resultText.setText(result);
             result.setLength(0);
         }
     }
+
+    public static ColorStateList resolveThemeColorStateList(Context context, int attributeName)
+    {
+        TypedValue tv = new TypedValue();
+        if(context != null && (context.getTheme().resolveAttribute(attributeName, tv, true) && tv.resourceId != 0))
+        {
+            return ContextCompat.getColorStateList(context, tv.resourceId);
+        }
+        return null;
+    }
+
 
     public static int parseInt(TextInputEditText editText, int defaultValue) {
         int intReturn;
