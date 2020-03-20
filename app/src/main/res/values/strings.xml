@@ -17,4 +17,7 @@
     <string name="twenties">Enter Number of Twenties</string>
     <string name="grandTotal">Grand Total</string>
     <string name="tip">Enter Tip Amount</string>
+    <string name="night_mode">Night Mode</string>
+    <string name="day_mode">Day Mode</string>
+    <string name="setting">Settings</string>
 </resources>

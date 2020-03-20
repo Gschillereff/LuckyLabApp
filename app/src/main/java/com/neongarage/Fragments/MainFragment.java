@@ -16,6 +16,7 @@ import androidx.navigation.fragment.NavHostFragment;
 public class MainFragment extends Fragment {
     Button countInButton;
     Button tipOutButton;
+    Button settingsButton;
 
     // View initialization logic
     @Nullable
@@ -33,6 +34,9 @@ public class MainFragment extends Fragment {
         countInButton.setOnClickListener(countInClickCallback);
         tipOutButton = view.findViewById(R.id.tip_out_button);
         tipOutButton.setOnClickListener(tipOutCallback);
+        settingsButton = view.findViewById(R.id.settings_button);
+        settingsButton.setOnClickListener(settingsCallback);
+
     }
 
     // The callback makes the call to the activity to make the transition to the count in fragment
@@ -43,5 +47,9 @@ public class MainFragment extends Fragment {
     // The callback makes the call to the activity to make the tip count fragment
     private View.OnClickListener tipOutCallback = countIn -> {
         NavHostFragment.findNavController(this).navigate(MainFragmentDirections.navigateToTipCount());
+    };
+
+    private View.OnClickListener settingsCallback = countIn -> {
+        NavHostFragment.findNavController(this).navigate(MainFragmentDirections.navigateToSettings());
     };
 }
