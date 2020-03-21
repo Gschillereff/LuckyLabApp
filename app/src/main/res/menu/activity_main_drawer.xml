@@ -4,12 +4,17 @@
 
     <group android:checkableBehavior="single">
         <item android:id="@+id/Home"
-            android:title="@string/home"/>
+            android:title="@string/home"
+            android:icon="@drawable/ic_home_black_24dp"/>
         <item android:id="@+id/Tip"
-            android:title="@string/tip_out"/>
+            android:title="@string/tip_out"
+            android:icon="@drawable/ic_money"/>
         <item android:id="@+id/CountIn"
-            android:title="@string/count_in"/>
+            android:title="@string/count_in"
+            android:icon="@drawable/ic_register_24dp"/>
+
         <item android:id="@+id/Settings"
-            android:title="@string/setting"/>
+            android:title="@string/setting"
+            android:icon="@drawable/ic_settings_black_24dp"/>
     </group>
 </menu>
