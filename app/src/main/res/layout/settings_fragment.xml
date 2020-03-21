@@ -3,13 +3,6 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <Button
-        android:id="@+id/dark_mode_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Dark Mode" />
-
     <Switch
         android:id="@+id/dark_mode_switch"
         android:layout_width="match_parent"

@@ -17,7 +17,7 @@ import androidx.fragment.app.Fragment;
 
 import com.neongarage.R;
 
-public class SettingFragment extends Fragment implements View.OnClickListener {
+public class SettingFragment extends Fragment{
 
    private Button darkModeButton;
    private Switch darkModeSwitch;
@@ -35,8 +35,6 @@ public class SettingFragment extends Fragment implements View.OnClickListener {
     public void onViewCreated(@NonNull View view,
                               @Nullable Bundle savedInstanceState) {
         context = getContext();
-        darkModeButton = view.findViewById(R.id.dark_mode_button);
-        darkModeButton.setOnClickListener(this);
         darkModeSwitch = view.findViewById(R.id.dark_mode_switch);
         darkModeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -52,29 +50,5 @@ public class SettingFragment extends Fragment implements View.OnClickListener {
         });
     }
 
-    @Override
-    public void onClick(View v) {
-
-        switch (v.getId()) {
-            case R.id.dark_mode_button:
-                runSettings(v);
-                break;
-        }
-    }
-
-
-
-    public void runSettings(View v) {
-       int nightMode = AppCompatDelegate.getDefaultNightMode();
-
-       if(nightMode == AppCompatDelegate.MODE_NIGHT_YES){
-           AppCompatDelegate.setDefaultNightMode
-                   (AppCompatDelegate.MODE_NIGHT_NO);
-       }else{
-           AppCompatDelegate.setDefaultNightMode
-                   (AppCompatDelegate.MODE_NIGHT_YES);
-       }
-
-    }
 
 }
