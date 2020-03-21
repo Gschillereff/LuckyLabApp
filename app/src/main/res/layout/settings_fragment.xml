@@ -7,5 +7,6 @@
         android:id="@+id/dark_mode_switch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="16dp"
         android:text="Dark Mode" />
 </LinearLayout>
