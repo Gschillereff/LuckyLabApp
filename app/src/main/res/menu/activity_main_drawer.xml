@@ -9,5 +9,7 @@
             android:title="@string/tip_out"/>
         <item android:id="@+id/CountIn"
             android:title="@string/count_in"/>
+        <item android:id="@+id/Settings"
+            android:title="@string/setting"/>
     </group>
 </menu>
