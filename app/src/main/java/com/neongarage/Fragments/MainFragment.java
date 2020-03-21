@@ -30,12 +30,6 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view,
                               @Nullable Bundle savedInstanceState) {
-        countInButton = view.findViewById(R.id.count_in_button);
-        countInButton.setOnClickListener(countInClickCallback);
-        tipOutButton = view.findViewById(R.id.tip_out_button);
-        tipOutButton.setOnClickListener(tipOutCallback);
-        settingsButton = view.findViewById(R.id.settings_button);
-        settingsButton.setOnClickListener(settingsCallback);
 
     }
 
