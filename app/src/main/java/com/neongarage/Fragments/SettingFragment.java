@@ -6,6 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +20,7 @@ import com.neongarage.R;
 public class SettingFragment extends Fragment implements View.OnClickListener {
 
    private Button darkModeButton;
+   private Switch darkModeSwitch;
    Context context;
 
     @Override
@@ -33,8 +37,20 @@ public class SettingFragment extends Fragment implements View.OnClickListener {
         context = getContext();
         darkModeButton = view.findViewById(R.id.dark_mode_button);
         darkModeButton.setOnClickListener(this);
+        darkModeSwitch = view.findViewById(R.id.dark_mode_switch);
+        darkModeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b == true) {
+                    AppCompatDelegate.setDefaultNightMode
+                            (AppCompatDelegate.MODE_NIGHT_YES);
+                } else {
+                    AppCompatDelegate.setDefaultNightMode
+                            (AppCompatDelegate.MODE_NIGHT_NO);
+                }
+            }
+        });
     }
-
 
     @Override
     public void onClick(View v) {
