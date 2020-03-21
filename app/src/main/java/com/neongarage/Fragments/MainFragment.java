@@ -14,9 +14,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 public class MainFragment extends Fragment {
-    Button countInButton;
-    Button tipOutButton;
-
     // View initialization logic
     @Nullable
     @Override
@@ -29,19 +26,7 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view,
                               @Nullable Bundle savedInstanceState) {
-        countInButton = view.findViewById(R.id.count_in_button);
-        countInButton.setOnClickListener(countInClickCallback);
-        tipOutButton = view.findViewById(R.id.tip_out_button);
-        tipOutButton.setOnClickListener(tipOutCallback);
+
     }
 
-    // The callback makes the call to the activity to make the transition to the count in fragment
-    private View.OnClickListener countInClickCallback = countIn -> {
-        NavHostFragment.findNavController(this).navigate(MainFragmentDirections.navigateToCountIn());
-    };
-
-    // The callback makes the call to the activity to make the tip count fragment
-    private View.OnClickListener tipOutCallback = countIn -> {
-        NavHostFragment.findNavController(this).navigate(MainFragmentDirections.navigateToTipCount());
-    };
 }
