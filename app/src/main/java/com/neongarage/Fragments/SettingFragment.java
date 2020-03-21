@@ -38,8 +38,8 @@ public class SettingFragment extends Fragment{
         darkModeSwitch = view.findViewById(R.id.dark_mode_switch);
         darkModeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b == true) {
+            public void onCheckedChanged(CompoundButton compoundButton, boolean darkModeEnabled) {
+                if (darkModeEnabled == true) {
                     AppCompatDelegate.setDefaultNightMode
                             (AppCompatDelegate.MODE_NIGHT_YES);
                 } else {
